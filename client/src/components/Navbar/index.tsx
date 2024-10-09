@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@radix-ui/react-navigation-menu";
-import StockChart from '/home/zev/Desktop/greenline-Branch1-AestheticChanges/client/src/components/StockChart'; // Adjust the path if necessary
+import StockChart from '../StockChart'; // Adjust the path if necessary
 
 export default function Home() {
   return (
