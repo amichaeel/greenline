@@ -68,13 +68,13 @@ export default function Navbar() {
   }, [searchQuery]);
 
   return (
-    <div className="w-full text-sm fixed top-0 bg-black z-50">
-      <div className="w-full py-2">
-        <div className="flex items-center justify-between py-4 px-4 mx-auto space-x-4 max-w-[1440px]">
+    <div className="w-full text-sm py-2 fixed top-0 bg-black z-50">
+      <div className="w-full">
+        <div className="flex items-center justify-between px-4 mx-auto space-x-4 max-w-[1440px]">
 
           {/* Left Section - Logo */}
           <div className="flex items-center">
-            <button className="invert" onClick={() => router.push('/')}>
+            <button className="invert" onClick={() => router.push('/portal')}>
               <Image
                 src="/greenline-logo-icon-transparent.png"
                 width={40}
@@ -89,12 +89,12 @@ export default function Navbar() {
             className="relative w-full max-w-xl"
             ref={searchRef}
           >
-            <div className="flex items-center w-full space-x-2 group rounded-md px-4 py-2 relative outline outline-[0.4px] transition-all duration-600 outline-neutral-700 focus-within:outline focus-within:outline-[#D4FF00]">
+            <div className="flex items-center w-full space-x-2 group rounded-sm px-4 py-1.5 relative outline outline-[0.5px] transition-all duration-600 outline-neutral-700 focus-within:outline focus-within:outline-[#D4FF00]">
               <CiSearch size={20} className="text-gray-100" />
               <input
                 type="search"
                 placeholder="Search"
-                className="border-none w-full bg-black outline-none text-white"
+                className="border-none w-full bg-black outline-none text-xs text-white"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
