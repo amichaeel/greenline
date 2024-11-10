@@ -118,8 +118,8 @@ const HeroSection = () => {
       <div className="relative pt-4 px-4 bg-gradient-to-b from-white/10 to-black">
         <div className="max-w-[1440px]  flex items-center justify-center flex-col mx-auto">
           {/* Main text content */}
-          <div className="space-y-8 w-full flex flex-col items-center justify-center max-w-[1440px] py-8">
-            <h1 className="text-6xl lg:text-7xl font-serif font-extralight leading-tight tracking-tight">
+          <div className="space-y-8 w-full flex flex-col items-center justify-center max-w-[1440px]">
+            <h1 className="text-6xl py-36 lg:text-7xl font-serif font-extralight leading-tight tracking-tight">
               <span className="text-white">Advanced Market</span>
               <br />
               <div className="relative inline-block">
@@ -128,19 +128,19 @@ const HeroSection = () => {
                 </span>
                 <div className="absolute top-0 -right-8 w-6 h-6 border border-[#D4FF00]/30 rounded-full animate-spin-slow" />
               </div>
+              <p className="text-lg pt-6 text-gray-400 max-w-2xl leading-relaxed tracking-wide">
+                Harness the power of advanced algorithms and real-time market data.
+                <br />
+                Make informed decisions with institutional-grade analytics.
+              </p>
             </h1>
 
-            <p className="text-lg text-gray-400 max-w-2xl leading-relaxed tracking-wide">
-              Harness the power of advanced algorithms and real-time market data.
-              <br />
-              Make informed decisions with institutional-grade analytics.
-            </p>
 
             {/* CTA section */}
             {/* Main text content */}
 
             {/* Features and CTA section */}
-            <div className="grid lg:grid-cols-2 gap-12 pt-8">
+            <div className="grid lg:grid-cols-2 gap-12 pb-8">
               {/* Features */}
               <div className="space-y-4">
                 {[
@@ -151,7 +151,7 @@ const HeroSection = () => {
                   <div
                     key={feature.title}
                     className="group border border-[#D4FF00]/10 bg-black/30 backdrop-blur-sm p-6 rounded-lg 
-                     hover:border-[#D4FF00]/20 transition-all duration-300 hover:translate-x-1"
+                     hover:border-[#D4FF00]/20 transition-all duration-300"
                   >
                     <div className="text-sm text-[#D4FF00] font-medium tracking-wide mb-2">{feature.title}</div>
                     <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
@@ -181,7 +181,7 @@ const HeroSection = () => {
                     size="lg"
                     className="w-full sm:w-auto group relative bg-[#D4FF00] lg:mt-12 rounded-full text-black 
                      hover:bg-[#D4FF00]/90 text-lg px-8 py-6 font-medium tracking-wide 
-                     transition-all duration-300 hover:translate-x-1 
+                     transition-all duration-300
                      hover:shadow-lg hover:shadow-[#D4FF00]/20"
                   >
                     <span className="flex font-sans items-center justify-center gap-2">
