@@ -7,6 +7,7 @@ import NewsSection from '@/components/NewsSection';
 import StockCardMini from '@/components/StockCardMini';
 import { Spinner } from '@/components/ui/spinner';
 import { CiCirclePlus } from "react-icons/ci";
+import StockRating from '@/components/StockRating';
 import {
   Accordion,
   AccordionContent,
@@ -122,12 +123,14 @@ const StockPage: React.FC<StockPageProps> = ({ params }) => {
       <Navbar />
       <div className="container max-w-[1440px] mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-6">
-          <div className='flex space-x-4'>
-            {stockInfo.logo_url && (
-              <img src={stockInfo.logo_url} alt={`${stockInfo.name} logo`} className="h-12 w-12" />
+          <div className='flex items-center'>
+            {!stockInfo.logo_url.includes('undefined') ? (
+              <img src={stockInfo.logo_url} alt={`${stockInfo.name} logo`} className="h-12 w-12 mr-4" />
+            ) : (
+              <div></div>
             )}
             <div>
-              <h1 className="text-2xl font-bold">{stockInfo.name} ({ticker})</h1>
+              <h1 className="text-2xl font-semibold">{stockInfo.name} ({ticker})</h1>
               {/* {stockInfo.website && (
                 <a href={stockInfo.website} target="_blank" rel="noopener noreferrer" className="text-[#D4FF00] text-xs">
                   {stockInfo.website}
@@ -145,9 +148,9 @@ const StockPage: React.FC<StockPageProps> = ({ params }) => {
         </p> */}
 
         <StockChart ticker={ticker} stockName={stockInfo.name} />
-        <Accordion type="single" className="w-full">
+        <Accordion defaultValue="item-1" type="single" className="w-full" collapsible>
           <AccordionItem value="item-1" className='border-none p-1'>
-            <AccordionTrigger>{stockInfo.name} Overview</AccordionTrigger>
+            <AccordionTrigger className='text-2xl font-semibold'>{stockInfo.name} Overview</AccordionTrigger>
             <AccordionContent>
               <div className='grid grid-cols-2 gap-12 justify-between'>
                 <p className="text-sm text-gray-400 mb-4">{stockInfo.description}</p>
@@ -175,7 +178,7 @@ const StockPage: React.FC<StockPageProps> = ({ params }) => {
         </Accordion>
         {/* Similar Stocks Section */}
         <div className="mt-8">
-          <h2 className="text-xl font-bold mb-4">Related Stocks</h2>
+          <h2 className="text-2xl font-semibold mb-4">Related Stocks</h2>
           <div className="flex space-x-4 overflow-x-auto scrollbar-none">
             {relatedTickers.map((relatedTicker) => (
               <div className="flex-shrink-0 w-48">
@@ -184,6 +187,7 @@ const StockPage: React.FC<StockPageProps> = ({ params }) => {
             ))}
           </div>
         </div>
+        <StockRating ticker={ticker} />
         <NewsSection ticker={ticker} />
 
       </div>

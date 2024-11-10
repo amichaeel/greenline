@@ -89,8 +89,8 @@ export default function Navbar() {
             className="relative w-full max-w-xl"
             ref={searchRef}
           >
-            <div className="flex items-center w-full space-x-2 group rounded-md px-4 py-2 relative outline outline-[0.2px] transition-all outline-white focus-within:outline focus-within:outline-[#D4FF00]">
-              <CiSearch size={20} className="text-gray-400" />
+            <div className="flex items-center w-full space-x-2 group rounded-md px-4 py-2 relative outline outline-[0.4px] transition-all duration-600 outline-neutral-700 focus-within:outline focus-within:outline-[#D4FF00]">
+              <CiSearch size={20} className="text-gray-100" />
               <input
                 type="search"
                 placeholder="Search"
@@ -107,7 +107,7 @@ export default function Navbar() {
               {isLoading && <Spinner size="small" className="ml-2" />}
             </div>
             {(isLoading || error || searchResults.length > 0) && (
-              <div className="transition-opacity duration-300 ease-in-out scrollbar-thumb-rounded-full scrollbar-track-rounded-md scrollbar scrollbar-thumb-[#D4FF00] scrollbar-track-black absolute left-0 right-0 bg-black text-white mt-1 border border-[#D4FF00] border-opacity-20 rounded-lg max-h-60 overflow-y-auto z-10">
+              <div className="transition-opacity duration-300 ease-in-out scrollbar-thumb-rounded-full scrollbar-track-rounded-md scrollbar scrollbar-thumb-[#4c4c4c] scrollbar-track-[#1E2124] absolute left-0 right-0 bg-[#1E2124] text-white mt-1 border border-[#41494E] rounded-md max-h-60 overflow-y-auto z-10">
                 {isLoading && <div className="p-4"><Spinner size="medium" /></div>}
                 {error && <div className="p-4 text-red-500">Error: {error}</div>}
                 {!isLoading && !error && searchResults.length === 0 && (
@@ -118,12 +118,12 @@ export default function Navbar() {
                     {searchResults.map((result) => (
                       <li
                         key={result.ticker}
-                        className="px-4 py-1 hover:bg-[#D4FF00] hover:text-black text-sm cursor-pointer"
+                        className="px-4 py-1 hover:bg-[#30363A] text-sm cursor-pointer"
                         onClick={() => handleSelectResult(result)}
                       >
-                        <div className="flex justify-between">
-                          <span className="font-semibold">{result.ticker}</span>
-                          <span>{highlightMatch(result.name, searchQuery)}</span>
+                        <div className="flex justify-between gap-6 px-4 py-1">
+                          <span>{highlightMatch(result.ticker, searchQuery)}</span>
+                          <span className='overflow-hidden truncate max-w-64'>{highlightMatch(result.name, searchQuery)}</span>
                         </div>
                       </li>
                     ))}

@@ -74,23 +74,33 @@ const NewsSection: React.FC<NewsSectionProps> = ({ ticker }) => {
       ) : news.length > 0 ? (
         <div className="space-y-4">
           {news.map((article) => (
-            <Card key={article.id} className="p-4 border-none bg-black rounded-none hover:bg-gray-300 hover:bg-opacity-10 transition-all">
+            <Card key={article.id} className="p-4 border-none bg-black rounded-none hover:bg-neutral-900">
               <a href={article.article_url} target="_blank" rel="noopener noreferrer">
-                <div className="flex">
+                <div className="flex gap-8">
+                  <div className='flex flex-col space-y-1 '>
+                    <div className='flex items-center gap-2'>
+                      <p className='text-white font-semibold tracking-wide text-xs'>{article.author}</p>
+                      <p className="text-xs text-gray-400">
+                        {new Date(article.published_utc).toLocaleString([], {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                          hour: 'numeric',
+                          minute: '2-digit',
+                          hour12: true
+                        })}
+                      </p>
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">{article.title}</h3>
+                    <p className="text-gray-300 mt-2">{article.description}</p>
+                  </div>
                   {article.image_url && (
                     <img
                       src={article.image_url}
                       alt={article.title}
-                      className="w-32 h-20 object-cover rounded-md mr-4"
+                      className="md:h-64 md:w-96 h-32 w-32 object-cover rounded-md mr-4"
                     />
                   )}
-                  <div>
-                    <h3 className="text-lg font-semibold text-white">{article.title}</h3>
-                    <p className="text-sm text-gray-400">
-                      {new Date(article.published_utc).toLocaleString()} by {article.author}
-                    </p>
-                    <p className="text-gray-300 mt-2">{article.description}</p>
-                  </div>
                 </div>
               </a>
             </Card>
