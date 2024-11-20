@@ -46,7 +46,7 @@ export default function Home() {
 
   // Fetch functions remain the same...
   const fetchNewsArticles = async () => {
-    const apiKey = process.env.POLYGON_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
     const url = `https://api.polygon.io/v2/reference/news?limit=20&apiKey=${apiKey}`;
 
     try {
@@ -67,7 +67,7 @@ export default function Home() {
   };
 
   const fetchMarketStatus = async () => {
-    const apiKey = process.env.POLYGON_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
     const url = `https://api.polygon.io/v1/marketstatus/now?apiKey=${apiKey}`;
 
     try {

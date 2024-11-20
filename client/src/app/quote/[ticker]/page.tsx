@@ -49,7 +49,7 @@ const StockPage: React.FC<StockPageProps> = ({ params }) => {
   const [relatedTickers, setRelatedTickers] = useState<string[]>([]);
 
   const fetchStockInfo = async () => {
-    const apiKey = process.env.POLYGON_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
     const url = `https://api.polygon.io/v3/reference/tickers/${ticker}?apiKey=${apiKey}`;
 
     try {
@@ -81,7 +81,7 @@ const StockPage: React.FC<StockPageProps> = ({ params }) => {
   };
 
   const fetchRelatedCompanies = async () => {
-    const apiKey = process.env.POLYGON_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
     const url = `https://api.polygon.io/v1/related-companies/${ticker}?apiKey=${apiKey}`;
 
     try {

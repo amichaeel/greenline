@@ -47,7 +47,7 @@ export default function Navbar() {
       setError(null);
 
       try {
-        const apiKey = process.env.POLYGON_API_KEY;
+        const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
         const response = await fetch(
           `https://api.polygon.io/v3/reference/tickers?search=${encodeURIComponent(
             searchQuery

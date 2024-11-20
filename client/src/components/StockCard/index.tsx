@@ -45,7 +45,7 @@ const StockCard: React.FC<StockCardProps> = ({ ticker, stockName }) => {
     setLoading(true);
     setError(null);
     try {
-      const apiKey = process.env.POLYGON_API_KEY;
+      const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
       const toDate = new Date();
       const fromDate = new Date();
       fromDate.setDate(toDate.getDate() - 1);

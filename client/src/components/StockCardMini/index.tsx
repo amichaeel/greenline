@@ -23,7 +23,7 @@ const StockCardMini: React.FC<StockCardMiniProps> = ({ ticker }) => {
   const router = useRouter();
 
   const fetchStockData = async () => {
-    const apiKey = process.env.POLYGON_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
     const url = `https://api.polygon.io/v3/reference/tickers/${ticker}?apiKey=${apiKey}`;
 
     try {
@@ -71,7 +71,7 @@ const StockCardMini: React.FC<StockCardMiniProps> = ({ ticker }) => {
     <div className="rounded-lg p-4 border-1 border-white w-54 h-36 text-white">
       <div onClick={() => router.push(`/quote/${ticker}`)} className="flex hover:cursor-pointer items-center mb-2">
         {stockInfo.logo_url && (
-          <img src={`${stockInfo.logo_url}?apiKey=${process.env.POLYGON_API_KEY}`} alt={`${stockInfo.name} logo`} className="h-6 w-6 mr-2" />
+          <img src={`${stockInfo.logo_url}?apiKey=${process.env.NEXT_PUBLIC_POLYGON_API_KEY}`} alt={`${stockInfo.name} logo`} className="h-6 w-6 mr-2" />
         )}
         <h3 className="text-sm font-semibold">{ticker}</h3>
       </div>

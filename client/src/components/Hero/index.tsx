@@ -20,7 +20,7 @@ const MarketTicker = () => {
     const fetchMarketData = async () => {
       try {
         const tickers = ['SPY', 'QQQ', 'BTC', 'ETH', 'AAPL', 'MSFT', 'NFLX'];
-        const apiKey = process.env.POLYGON_API_KEY;
+        const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
 
         const promises = tickers.map(async (ticker) => {
           const response = await fetch(
