@@ -171,7 +171,7 @@ const StockChart: React.FC<StockChartProps> = ({ ticker, stockName }) => {
 
   const getPolygonData = async (window: TimeWindow, ticker: string): Promise<PolygonResponse> => {
     const { from, to } = getDateRange(window);
-    const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
+    const apiKey = process.env.POLYGON_API_KEY;
     const multiplier = window === '1D' || window === '5D' ? '5' : '1';
     const timespan = window === '1D' || window === '5D' ? 'minute' : 'day';
     const url = `https://api.polygon.io/v2/aggs/ticker/${ticker}/range/${multiplier}/${timespan}/${from}/${to}?adjusted=true&sort=asc&limit=50000&apiKey=${apiKey}`;

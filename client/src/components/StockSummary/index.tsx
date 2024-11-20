@@ -30,7 +30,7 @@ const StockSummary: React.FC<StockSummaryProps> = ({ ticker }) => {
 
   // ... (keeping existing fetch functions the same)
   const fetchStockData = async () => {
-    const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
+    const apiKey = process.env.POLYGON_API_KEY;
     const fromDate = new Date();
     fromDate.setMonth(fromDate.getMonth() - 6);
     const from = fromDate.toISOString().split("T")[0];
@@ -66,7 +66,7 @@ const StockSummary: React.FC<StockSummaryProps> = ({ ticker }) => {
     }
 
     const openai = new OpenAI({
-      apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+      apiKey: process.env.OPENAI_API_KEY,
       dangerouslyAllowBrowser: true,
     });
 

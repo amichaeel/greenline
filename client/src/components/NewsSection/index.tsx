@@ -39,7 +39,7 @@ const NewsSection: React.FC<NewsSectionProps> = ({ ticker }) => {
     setLoading(true);
     setError(null);
     try {
-      const apiKey = process.env.NEXT_PUBLIC_POLYGON_API_KEY;
+      const apiKey = process.env.POLYGON_API_KEY;
       const url = `https://api.polygon.io/v2/reference/news?ticker=${ticker}&limit=10&apiKey=${apiKey}`;
 
       const response = await fetch(url);
