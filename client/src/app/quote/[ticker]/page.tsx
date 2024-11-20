@@ -8,6 +8,9 @@ import StockCardMini from '@/components/StockCardMini';
 import { Spinner } from '@/components/ui/spinner';
 import { CiCirclePlus } from "react-icons/ci";
 import StockRating from '@/components/StockRating';
+import TickerChat from '@/components/TickerChat';
+import StockSummary from '@/components/StockSummary';
+import { Button } from '@/components/ui/button';
 import {
   Accordion,
   AccordionContent,
@@ -42,6 +45,7 @@ const StockPage: React.FC<StockPageProps> = ({ params }) => {
   const [stockInfo, setStockInfo] = useState<StockInfo | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [showChat, setShowChat] = useState(false);
   const [relatedTickers, setRelatedTickers] = useState<string[]>([]);
 
   const fetchStockInfo = async () => {
@@ -148,6 +152,8 @@ const StockPage: React.FC<StockPageProps> = ({ params }) => {
         </p> */}
 
         <StockChart ticker={ticker} stockName={stockInfo.name} />
+        <TickerChat ticker={ticker} />
+        <StockSummary ticker={ticker} />
         <Accordion defaultValue="item-1" type="single" className="w-full" collapsible>
           <AccordionItem value="item-1" className='border-none p-1'>
             <AccordionTrigger className='text-2xl font-semibold'>{stockInfo.name} Overview</AccordionTrigger>
@@ -189,9 +195,8 @@ const StockPage: React.FC<StockPageProps> = ({ params }) => {
         </div>
         <StockRating ticker={ticker} />
         <NewsSection ticker={ticker} />
-
       </div>
-    </div>
+    </div >
   );
 };
 

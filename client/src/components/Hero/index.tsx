@@ -118,7 +118,7 @@ const HeroSection = () => {
       <div className="relative pt-4 px-4 bg-gradient-to-b from-white/10 to-black">
         <div className="max-w-[1440px]  flex items-center justify-center flex-col mx-auto">
           {/* Main text content */}
-          <div className="space-y-8 w-full flex flex-col items-center justify-center max-w-[1440px]">
+          <div className="pb-24 w-full flex flex-col items-center justify-center max-w-[1440px]">
             <h1 className="text-6xl py-36 lg:text-7xl font-serif font-extralight leading-tight tracking-tight">
               <span className="text-white">Advanced Market</span>
               <br />
@@ -140,29 +140,12 @@ const HeroSection = () => {
             {/* Main text content */}
 
             {/* Features and CTA section */}
-            <div className="grid lg:grid-cols-2 gap-12 pb-8">
+            <div className="max-w-xl">
               {/* Features */}
-              <div className="space-y-4">
-                {[
-                  { title: 'REAL-TIME ANALYTICS', desc: 'Live market data and instant analysis' },
-                  { title: 'PREDICTIVE AI', desc: 'Advanced machine learning models' },
-                  { title: 'INSTITUTIONAL GRADE', desc: 'Professional trading tools' }
-                ].map((feature) => (
-                  <div
-                    key={feature.title}
-                    className="group border border-[#D4FF00]/10 bg-black/30 backdrop-blur-sm p-6 rounded-lg 
-                     hover:border-[#D4FF00]/20 transition-all duration-300"
-                  >
-                    <div className="text-sm text-[#D4FF00] font-medium tracking-wide mb-2">{feature.title}</div>
-                    <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
-                    <div className="h-1 w-12 bg-gradient-to-r from-[#D4FF00] to-transparent rounded-full mt-4 
-                         opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                ))}
-              </div>
+
 
               {/* CTA Section */}
-              <div className="flex flex-col gap-8 lg:gap-0">
+              <div className="flex w-full justify-center flex-col gap-8 mmx-w-sm">
                 <div className="space-y-4">
                   <h3 className="text-2xl font-semibold text-white leading-tight">
                     Discover Next-Gen Trading
@@ -193,72 +176,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <div className="relative bg-white text-black w-screen overflow-hidden py-24">
-            <div className="max-w-7xl mx-auto px-4">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                {/* Left side with text */}
-                <div className="space-y-6">
-                  <h2 className="text-4xl lg:text-5xl font-extralight leading-tight">
-                    Why choose our platform?
-                  </h2>
-                  <div className="space-y-8">
-                    {[
-                      {
-                        title: "Advanced AI Models",
-                        description: "Our neural networks process millions of data points to identify patterns humans might miss."
-                      },
-                      {
-                        title: "Real-Time Processing",
-                        description: "Get instant insights as market conditions change, staying ahead of market movements."
-                      },
-                      {
-                        title: "Proven Accuracy",
-                        description: "Machine learning models trained on decades of historical data for reliable predictions."
-                      }
-                    ].map((item, index) => (
-                      <div key={index} className="flex gap-4">
-                        <div className="h-8 w-8 rounded-full bg-[#D4FF00] flex items-center justify-center shrink-0">
-                          {index + 1}
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                          <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
-                {/* Right side with stats */}
-                <div className="relative">
-                  <div className="grid grid-cols-2 gap-6">
-                    {[
-                      { metric: "90%", label: "Prediction Accuracy" },
-                      { metric: "<50ms", label: "Processing Time" },
-                      { metric: "24/7", label: "Market Coverage" },
-                      { metric: "1M+", label: "Data Points Analyzed" }
-                    ].map((stat, index) => (
-                      <div
-                        key={index}
-                        className="p-8"
-                      >
-                        <div className="text-black text-4xl font-bold mb-2">
-                          {stat.metric}
-                        </div>
-                        <div className="text-neutral-700 text-sm">
-                          {stat.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Decorative elements */}
-                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#D4FF00]/10 rounded-full blur-2xl" />
-                  <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#D4FF00]/10 rounded-full blur-2xl" />
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="relative bg-gradient-to-b from-[#D4FF00] to-[#000000] pb-64 text-black w-screen overflow-hidden">
 
             {/* Content */}
